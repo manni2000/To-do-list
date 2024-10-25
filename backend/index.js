@@ -7,13 +7,13 @@ import taskRoutes from './routes/tasks.js';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 app.use(cors());
 app.use(express.json());
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://manish:manish9734@cluster0.p6x7dxw.mongodb.net/mydb')
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch((error) => console.error('MongoDB connection error:', error));
 
