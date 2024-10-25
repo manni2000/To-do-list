@@ -6,7 +6,7 @@ type Priority = 'low' | 'medium' | 'high';
 
 interface AddTaskScreenProps {
   onBack: () => void;
-  onSubmit: (task: Omit<Task, 'id' | 'createdAt'>) => void;
+  onSubmit: (task: Omit<Task, '_id' | 'createdAt'>) => void;
 }
 
 export default function AddTaskScreen({
@@ -25,18 +25,21 @@ export default function AddTaskScreen({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
+  
     // Combine date and startTime into a single dateTime string
     const dateTime = `${formData.date}T${formData.startTime}`;
-
+  
     // Create a task object that matches the expected type
-    const task = {
-      ...formData,
-      dateTime, // Combined dateTime field
+    const task: Omit<Task, '_id' | 'createdAt'> = {
+      title: formData.title,
+      description: formData.description,
+      dateTime: dateTime, // Combined dateTime field
+      priority: formData.priority as Priority, // Priority explicitly typed
+      completed: formData.completed,
     };
-
+  
     onSubmit(task); // Pass the combined task object
-  };
+  };  
 
   return (
     <div className="min-h-screen bg-gray-50 p-4">

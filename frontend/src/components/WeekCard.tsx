@@ -1,7 +1,6 @@
-import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import { WeekSummary } from '../types/task';
-import { formatDate } from '../utils/dateUtils';
+import { formatDate } from '../utlis/dateUtils';
 
 interface WeekCardProps {
   weekSummary: WeekSummary;

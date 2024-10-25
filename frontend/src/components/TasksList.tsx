@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { Pencil, Trash2 } from 'lucide-react';
 import { Task } from '../types/task';
 
@@ -25,12 +24,12 @@ export default function TasksList({
       
       <div className="space-y-4">
         {tasks.map((task) => (
-          <div key={task.id} className="flex items-center justify-between">
+          <div key={task._id} className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <input
                 type="checkbox"
                 checked={task.completed}
-                onChange={() => onToggleComplete(task.id)}
+                onChange={() => onToggleComplete(task._id)}
                 className="h-5 w-5 rounded border-gray-300 text-blue-600"
               />
               <span className={task.completed ? 'text-gray-400 line-through' : ''}>
@@ -45,7 +44,7 @@ export default function TasksList({
                 <Pencil className="h-4 w-4" />
               </button>
               <button 
-                onClick={() => onDelete(task.id)}
+                onClick={() => onDelete(task._id)}
                 className="text-gray-400 hover:text-red-600"
               >
                 <Trash2 className="h-4 w-4" />

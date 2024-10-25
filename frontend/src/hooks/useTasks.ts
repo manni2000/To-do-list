@@ -26,7 +26,7 @@ export function useTasks() {
     fetchTasks();
   }, [fetchTasks]);
 
-  const addTask = useCallback(async (task: Omit<Task, 'id' | 'createdAt'>) => {
+  const addTask = useCallback(async (task: Omit<Task, '_id' | 'createdAt'>) => {
     try {
       const response = await axios.post(`${API_URL}/tasks`, task);
       setTasks(prev => [...prev, response.data]);

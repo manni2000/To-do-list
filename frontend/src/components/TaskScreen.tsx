@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Search, Settings, Bell, Plus } from 'lucide-react';
 import WeekDays from './WeekDays';
 import StatsCards from './StatsCards';
@@ -20,7 +20,6 @@ interface TaskScreenProps {
 }
 
 export default function TaskScreen({
-  tasks,
   selectedDate,
   setSelectedDate,
   stats,
@@ -92,7 +91,7 @@ export default function TaskScreen({
         <TaskForm
           task={editingTask}
           onSubmit={(updates) => {
-            onUpdateTask(editingTask.id, updates);
+            onUpdateTask(editingTask._id, updates);
             setEditingTask(null);
           }}
           onClose={() => setEditingTask(null)}

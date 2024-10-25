@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import WelcomeScreen from './components/WelcomeScreen';
 import TaskScreen from './components/TaskScreen';
 import AddTaskScreen from './components/AddTaskScreen';
@@ -21,7 +21,7 @@ function App() {
     stats,
   } = useTasks();
 
-  const handleAddTask = (task: Omit<Task, 'id' | 'createdAt'>) => {
+  const handleAddTask = (task: Omit<Task, '_id' | 'createdAt'>) => {
     addTask(task);
     setCurrentScreen('tasks');
   };

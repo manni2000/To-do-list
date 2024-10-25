@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowLeft, Search } from 'lucide-react';
 import { Task } from '../types/task';
 
@@ -36,13 +35,13 @@ export default function SearchScreen({ query, tasks, onBack, onToggleComplete }:
       <div className="space-y-4">
         {filteredTasks.map((task) => (
           <div
-            key={task.id}
+            key={task._id}
             className="flex items-center space-x-3 bg-white p-4 rounded-lg"
           >
             <input
               type="checkbox"
               checked={task.completed}
-              onChange={() => onToggleComplete(task.id)}
+              onChange={() => onToggleComplete(task._id)}
               className="h-5 w-5 rounded border-gray-300 text-blue-600"
             />
             <span className={task.completed ? 'text-gray-400 line-through' : ''}>

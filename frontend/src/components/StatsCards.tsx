@@ -1,4 +1,3 @@
-import React from 'react';
 import { CheckCircle, XCircle } from 'lucide-react';
 
 interface StatsCardsProps {

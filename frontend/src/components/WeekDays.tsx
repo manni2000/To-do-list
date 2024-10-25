@@ -1,4 +1,3 @@
-import React from 'react';
 import { getWeekDates } from '../utlis/dateUtils';
 
 interface WeekDaysProps {

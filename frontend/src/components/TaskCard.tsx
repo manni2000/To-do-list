@@ -1,7 +1,6 @@
-import React from 'react';
 import { Pencil, Trash2, Clock, Calendar } from 'lucide-react';
 import { Task } from '../types/task';
-import { formatDate } from '../utils/dateUtils';
+import { formatDate } from '../utlis/dateUtils';
 
 interface TaskCardProps {
   task: Task;
@@ -24,7 +23,7 @@ export function TaskCard({ task, onEdit, onDelete, onToggleComplete }: TaskCardP
           <input
             type="checkbox"
             checked={task.completed}
-            onChange={() => onToggleComplete(task.id)}
+            onChange={() => onToggleComplete(task._id)}
             className="mt-1 h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
           />
           <div>
@@ -59,7 +58,7 @@ export function TaskCard({ task, onEdit, onDelete, onToggleComplete }: TaskCardP
             <Pencil className="h-5 w-5" />
           </button>
           <button
-            onClick={() => onDelete(task.id)}
+            onClick={() => onDelete(task._id)}
             className="p-1 text-gray-400 hover:text-red-500 transition-colors"
           >
             <Trash2 className="h-5 w-5" />
