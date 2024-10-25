@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect } from 'react';
 import axios from 'axios';
 import { Task } from '../types/task';
 
-const API_URL = 'https://to-do-list-backend-0oqy.onrender.com/api';
+const API_URL = 'https://to-do-list-backend-0oqy.onrender.com/';
 
 export function useTasks() {
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
