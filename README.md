@@ -69,12 +69,6 @@ To set up and run the project locally, follow these steps:
      npm start
      ```
    - The application should now be running on `http://localhost:3000`.
-     
-### Preview in Mobile-UI
-![to-do-1](https://github.com/user-attachments/assets/39e4213d-b706-4156-a177-7f0249156baf)
-![to-do-2](https://github.com/user-attachments/assets/58061fed-d904-495d-9b5b-78913c39e28d)
-![to-do-3](https://github.com/user-attachments/assets/59ff7b71-f396-4394-90d4-fea1ef26094b)
-
 
 4. **Visit the Application:**
    - Open your web browser and go to `http://localhost:3000` to start using the To-Do List application.
